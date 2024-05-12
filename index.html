@@ -71,6 +71,7 @@
 
     // Function to handle form submission
     async function search() {
+      document.getElementById('searchButton').textContent = 'Searching...';
       const query = document.getElementById('query').value;
       const response = await fetch('/search', {
         method: 'POST',
@@ -91,6 +92,7 @@
         const errorMessage = await response.text();
         alert(errorMessage);
       }
+      document.getElementById('searchButton').textContent = 'Search';
     }
 
     // Submit the form via AJAX when the search button is clicked
